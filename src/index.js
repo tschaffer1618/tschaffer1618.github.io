@@ -1,7 +1,7 @@
 import $ from 'jquery'
 
 $(document).ready(() => {
-  document.addEventListener("mousemove", () => {
+  // document.addEventListener("mousemove", () => {
     $.ajax({
        url: 'https://wordwatch-api.herokuapp.com/api/v1/top_word',
        type: 'get',
@@ -10,7 +10,7 @@ $(document).ready(() => {
          $('#this-one').text(word);
        }
     });
-  });
+  // });
 
   $("button").click(() => {
     var array = document.getElementsByTagName('textarea')[0].value.split(" ")
