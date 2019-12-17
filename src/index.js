@@ -9,16 +9,19 @@ $(document).ready(() => {
      }
   });
 
-  var array = ["chicken", "chicken", "chicken"]
-  array.forEach((word) => {
-    var json = {"word": {"value": `${word}`}}
-    $.ajax({
-       url: 'https://wordwatch-api.herokuapp.com/api/v1/words',
-       type: 'post',
-       data: json,
-       success: function(msg){
 
-       }
-    });
+  $("button").click(() => {
+    var array = document.getElementsByTagName('textarea')[0].value.split(" ")
+    array.forEach((word) => {
+      var json = {"word": {"value": `${word}`}}
+      $.ajax({
+         url: 'https://wordwatch-api.herokuapp.com/api/v1/words',
+         type: 'post',
+         data: json,
+         success: function(msg){
+
+         }
+      });
+    })
   })
 })
